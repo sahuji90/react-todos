@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-
+import ToDoRowItem from './components/ToDoRowItem';
 function App() {
   return (
     <div className='mt-5 container'>
@@ -17,13 +17,7 @@ function App() {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td scope="row">Task 1</td>
-                  <td>
-                    <button>Edit</button>
-                    <button>Delete</button>
-                  </td>
-                </tr>
+                <ToDoRowItem/>
                 <tr>
                   <td scope="row">Task 2</td>
                   <td>
@@ -32,7 +26,7 @@ function App() {
                   </td>
                 </tr>
                 <tr>
-                  <td>Task 3</td>
+                  <td scope="row">Task 3</td>
                   <td>
                     <button>Edit</button>
                     <button>Delete</button>
