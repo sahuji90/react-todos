@@ -10,15 +10,14 @@ function ToDoTable(props){
                 </tr>
               </thead>
               <tbody>
-                <ToDoRowItem rownum={props.todos[0].rownum}
-                              taskName={props.todos[0].taskName}
-                              taskAssigned={props.todos[0].taskAssigned}/>
-                <ToDoRowItem rownum={props.todos[1].rownum}
-                              taskName={props.todos[1].taskName}
-                              taskAssigned={props.todos[1].taskAssigned}/>
-                <ToDoRowItem rownum={props.todos[2].rownum}
-                              taskName={props.todos[2].taskName}
-                              taskAssigned={props.todos[2].taskAssigned}/>
+                {props.todos.map((todo) => (
+                    <ToDoRowItem  
+                        rownum={todo.rownum} 
+                        taskName={todo.taskName} 
+                        taskAssigned={todo.taskAssigned}
+                    />
+                )
+            )}
                 
               </tbody>
             </table>
