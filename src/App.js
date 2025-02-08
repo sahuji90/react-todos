@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ToDoTable from './components/ToDoTable';
+import NewToDoForm from './components/NewToDoForm';
 function App() {
 const [todos,setTodos] = useState(
     [{rownum:'1',taskName:'Study React',taskAssigned:'user1'},
@@ -25,6 +26,7 @@ const [todos,setTodos] = useState(
             <ToDoTable todos={todos}/>
             <button class='btn btn-primary' onClick={addTodo}>Add new Todo</button>
           </div>
+          <NewToDoForm/>
         </div>
         
     </div>
