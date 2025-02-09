@@ -12,6 +12,7 @@ function ToDoTable(props){
               <tbody>
                 {props.todos.map((todo) => (
                     <ToDoRowItem  
+                        key={todo.rownum}
                         rownum={todo.rownum} 
                         taskName={todo.taskName} 
                         taskAssigned={todo.taskAssigned}
