@@ -4,6 +4,8 @@ import './App.css';
 import ToDoTable from './components/ToDoTable';
 import NewToDoForm from './components/NewToDoForm';
 function App() {
+
+  const [showTodoForm, setShowTodoForm] = useState(false);
 const [todos,setTodos] = useState(
     [{rownum:1,taskName:'Study React',taskAssigned:'user1'},
     {rownum:2,taskName:'Go To Gym',taskAssigned:'user1'}, 
@@ -36,9 +38,14 @@ const [todos,setTodos] = useState(
           </div>
           <div className="card-body">
             <ToDoTable todos={todos} deleteTodo={deleteTodo}/>
-            <button className='btn btn-primary' onClick={addTodo}>Add new Todo</button>
+            <button onClick={()=>setShowTodoForm(!showTodoForm)} className='btn btn-primary mt-3'>
+              {showTodoForm ? 'Close New Todo' : 'New Todo'}
+            </button>
           </div>
-          <NewToDoForm addTodo={addTodo}/>
+          {showTodoForm &&
+            <NewToDoForm addTodo={addTodo}/>
+          }
+          
         </div>
         
     </div>
