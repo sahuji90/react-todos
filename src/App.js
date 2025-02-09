@@ -10,9 +10,9 @@ const [todos,setTodos] = useState(
     {rownum:'3',taskName:'Study Angular',taskAssigned:'user2'},
     {rownum:'4',taskName:'Charge EV',taskAssigned:'user2'}]
   ) 
-  const addTodo = () => {
+  const addTodo = (description,assigned) => {
     if(todos.length > 0){
-      const newTodo = {rownum: todos.length+1, taskName: 'New Task', taskAssigned: 'New User'};
+      const newTodo = {rownum: todos.length+1, taskName: description, taskAssigned: assigned};
       setTodos([...todos,newTodo]);
     } 
   };
@@ -26,7 +26,7 @@ const [todos,setTodos] = useState(
             <ToDoTable todos={todos}/>
             <button class='btn btn-primary' onClick={addTodo}>Add new Todo</button>
           </div>
-          <NewToDoForm/>
+          <NewToDoForm addTodo={addTodo}/>
         </div>
         
     </div>
