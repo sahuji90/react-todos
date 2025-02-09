@@ -16,6 +16,7 @@ function ToDoTable(props){
                         rownum={todo.rownum} 
                         taskName={todo.taskName} 
                         taskAssigned={todo.taskAssigned}
+                        deleteTodo={props.deleteTodo}
                     />
                 )
             )}

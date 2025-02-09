@@ -22,6 +22,12 @@ const [todos,setTodos] = useState(
       setTodos([...todos,newTodo]);
     
   };
+  const deleteTodo = (deleteToDoRownumber) => {
+    let filtered = todos.filter(function(value){
+      return value.rownum !== deleteToDoRownumber;
+    });
+    setTodos(filtered);
+  }
   return (
     <div className='mt-5 container'>
         <div className="card">
@@ -29,7 +35,7 @@ const [todos,setTodos] = useState(
             Your Todo's
           </div>
           <div className="card-body">
-            <ToDoTable todos={todos}/>
+            <ToDoTable todos={todos} deleteTodo={deleteTodo}/>
             <button className='btn btn-primary' onClick={addTodo}>Add new Todo</button>
           </div>
           <NewToDoForm addTodo={addTodo}/>
