@@ -7,10 +7,10 @@ function App() {
 
   const [showTodoForm, setShowTodoForm] = useState(false);
 const [todos,setTodos] = useState(
-    [{rownum:1,taskName:'Study React',taskAssigned:'user1'},
-    {rownum:2,taskName:'Go To Gym',taskAssigned:'user1'}, 
-    {rownum:3,taskName:'Study Angular',taskAssigned:'user2'},
-    {rownum:4,taskName:'Charge EV',taskAssigned:'user2'}]
+    [{rownum:1,taskName:'Study Something New',taskAssigned:'Sunil'},
+    {rownum:2,taskName:'Come up with New memes',taskAssigned:'Sunil'}, 
+    {rownum:3,taskName:'Share memes on Intech ke dushman',taskAssigned:'Sunil'},
+    {rownum:4,taskName:'Intech se kaise peehca chudaaye',taskAssigned:'Sunil'}]
   ) 
   const addTodo = (description,assigned) => {
     let rowNumber = 0;
