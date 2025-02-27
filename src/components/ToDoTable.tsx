@@ -1,5 +1,6 @@
+import React from 'react';
 import ToDoRowItem from './ToDoRowItem';
-function ToDoTable(props){
+function ToDoTable(props : {todos: TodoModel[], deleteTodo: Function}){
     return(
         <table className="table table-hover">
               <thead>
@@ -12,10 +13,10 @@ function ToDoTable(props){
               <tbody>
                 {props.todos.map((todo) => (
                     <ToDoRowItem  
-                        key={todo.rownum}
-                        rownum={todo.rownum} 
-                        taskName={todo.taskName} 
-                        taskAssigned={todo.taskAssigned}
+                        key={todo.rowNumber}
+                        rowNumber={todo.rowNumber} 
+                        rowDescription={todo.rowDescription} 
+                        rowAssigned={todo.rowAssigned}
                         deleteTodo={props.deleteTodo}
                     />
                 )
